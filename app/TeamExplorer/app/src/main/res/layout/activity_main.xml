@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity"
+    android:paddingBottom="40dp">
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="@color/aqua"
+        >
+        <ImageButton
+            android:id="@+id/button_show_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/npu4"
+            android:onClick="onButtonShowMenu"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:id="@+id/linear_info"
+            android:layout_alignLeft="@+id/button_show_menu"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/button_show_menu"
+            android:layout_toEndOf="@+id/button_show_menu"
+            android:layout_marginLeft="96dp"
+            android:layout_marginStart="100dp"
+            >
+
+            <ProgressBar
+                android:id="@+id/progress_label"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                />
+
+            <TextView
+                android:id="@+id/label_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="工大自习室"
+                android:textSize="23dp"
+                android:background="@color/aqua"
+                android:textColor="@color/black"
+                android:typeface="monospace"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="15dp"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/class_room_fragment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_top"
+        android:layout_above="@+id/layout_buttom"
+        />
+    <RelativeLayout
+        android:id="@+id/layout_buttom"
+        android:layout_alignParentBottom="true"
+        android:layout_height="64dp"
+        android:layout_width="fill_parent"
+        android:background="@color/colorPrimary">
+
+        <ImageButton
+            android:id = "@+id/button_classroom"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/image_button_classroom"
+            android:onClick="onButtonShowClassRoom"
+            />
+
+        <ImageButton
+            android:id = "@+id/button_person_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/image_button_people"
+            android:onClick="onButtonShowPersonInfo"
+            />
+
+        <ImageButton
+            android:id = "@+id/button_student_table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/image_button_table"
+            android:layout_centerHorizontal="true"
+            android:onClick="onButtonShowTable"
+            />
+    </RelativeLayout>
+</RelativeLayout>

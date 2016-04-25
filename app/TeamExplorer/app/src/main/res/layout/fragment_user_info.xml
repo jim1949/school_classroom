@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whitesmoke"
+    android:orientation="vertical" >
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:background="@drawable/settings_first_item"
+                    android:drawableRight="@drawable/mm_submenu_normal"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="25dp"
+                    android:text="个人信息"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/settings_first_item"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/mm_submenu_normal"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="25dp"
+                    android:text="修改密码"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:background="@drawable/settings_first_item"
+                    android:drawableRight="@drawable/mm_submenu_normal"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="25dp"
+                    android:text="背景选择"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:background="@drawable/settings_first_item"
+                    android:drawableRight="@drawable/mm_submenu_normal"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="25dp"
+                    android:text="设置"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:background="@drawable/settings_first_item"
+                    android:drawableRight="@drawable/mm_submenu_normal"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="25dp"
+                    android:text="跑操查询"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:background="@drawable/settings_first_item"
+                    android:drawableRight="@drawable/mm_submenu_normal"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="25dp"
+                    android:text="校园卡充值"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:background="@drawable/settings_first_item"
+                    android:drawableRight="@drawable/mm_submenu_normal"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="25dp"
+                    android:text="我的诚信度"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:background="@drawable/settings_first_item"
+                    android:drawableRight="@drawable/mm_submenu_normal"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="25dp"
+                    android:text="帮助与反馈"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:background="@drawable/settings_first_item"
+                    android:drawableRight="@drawable/mm_submenu_normal"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="25dp"
+                    android:text="关于本软件"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

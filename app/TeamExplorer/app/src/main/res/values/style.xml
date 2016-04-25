@@ -1,0 +1,41 @@
+<resources>
+    <style name="textview_allgrade_content">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">#cfcfcf</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <style name="class_style">
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1</item>
+
+        <item name="android:gravity">left</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">#cfcfcf</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="class_content_style">
+        <item name="android:gravity">left</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1</item>
+
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:maxEms">2</item> <!-- 强行限制每行的字数 -->
+
+        <item name="android:maxLines">4</item>
+
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">#cfcfcf</item>
+        <item name="android:clickable">true</item>
+    </style>
+</resources> 

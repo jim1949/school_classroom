@@ -1,0 +1,4 @@
+#include <QtGui>
+ui->play_button->setStyleSheet("QPushButton{border-image: url(:/new/icons/icons/play-pause.png);}"
+                              "QPushButton:hover{border-image: url(:/new/icons/icons/play-pause-hover.png);}"
+                              "QPushButton:pressed{border-image: url(:/new/icons/icons/play-pause-pressed.png);}");

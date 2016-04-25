@@ -1,0 +1,287 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d1d1d1"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3" >
+
+            <TextView
+                android:gravity="center"
+                style="@style/textview_allgrade_content"
+                android:padding="2dip"
+                android:text="@string/name" />
+
+            <TextView
+                android:gravity="center"
+                style="@style/textview_allgrade_content"
+                android:padding="2dip"
+                android:text="@string/monday" />
+
+            <TextView
+                android:gravity="center"
+                style="@style/textview_allgrade_content"
+                android:padding="2dip"
+                android:text="@string/tuesday" />
+
+            <TextView
+                android:gravity="center"
+                style="@style/textview_allgrade_content"
+                android:padding="2dip"
+                android:text="@string/wednesday" />
+
+            <TextView
+                android:gravity="center"
+                style="@style/textview_allgrade_content"
+                android:padding="2dip"
+                android:text="@string/thursday" />
+
+            <TextView
+                android:gravity="center"
+                style="@style/textview_allgrade_content"
+                android:padding="2dip"
+                android:text="@string/friday" />
+
+            <TextView
+                android:gravity="center"
+                style="@style/textview_allgrade_content"
+                android:padding="2dip"
+                android:text="@string/saturday" />
+
+            <TextView
+                android:gravity="center"
+                style="@style/textview_allgrade_content"
+                android:padding="2dip"
+                android:text="@string/sunday" />
+
+
+        </TableRow>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.01dp"
+            android:layout_weight="0.05"
+            android:background="#707070" />
+
+
+        <!-- 第一节课 -->
+        <TableRow
+
+            android:id="@+id/tableRow2"
+            style="@style/class_style"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            >
+
+            <TextView
+                android:gravity="left"
+                android:padding="2dip"
+                android:text="@string/class1"
+                />
+            <!--  接下来这边是每周第一节课的时间-->
+            <!--  一共需要七个 -->
+            <!--  这边仅仅作为一个例子 -->
+            <TextView
+                style="@style/class_content_style"
+                android:gravity="left"
+                android:padding="2dip"
+                android:text="@string/mon_1"
+                android:background="#98fb98"
+                />
+            <TextView
+
+                style="@style/class_content_style"
+                android:gravity="left"
+                android:padding="2dip"
+                android:text="@string/tu_1"
+                />
+            <TextView
+
+                style="@style/class_content_style"
+                android:gravity="left"
+                android:padding="2dip"
+                android:text="@string/wed_1"
+                />
+            <TextView
+                style="@style/class_content_style"
+                android:gravity="left"
+                android:padding="2dip"
+                android:text="@string/th_1"
+                android:background="#eeee00"
+                />
+            <TextView
+
+                style="@style/class_content_style"
+                android:gravity="left"
+                android:padding="2dip"
+                android:text="@string/fr_1"
+                />
+            <TextView
+
+                style="@style/class_content_style"
+                android:gravity="left"
+                android:padding="2dip"
+                android:text="@string/sat_1"
+                />
+            <TextView
+                android:gravity="left"
+                android:padding="2dip"
+                android:background="#dc134c"
+                style="@style/class_content_style"
+                android:text="@string/sun_1"
+
+                />
+        </TableRow>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.1dp"
+            android:layout_weight="0.05"
+            android:background="#707070" />
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            style="@style/class_style"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <TextView
+                android:gravity="left"
+                android:padding="2dip"
+                android:text="@string/class2"
+                />
+            <!--  接下来这边是每周第2节课的时间-->
+            <!--  一共需要七个 -->
+
+
+        </TableRow>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.1dp"
+            android:layout_weight="0.05"
+            android:background="#707070" />
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            style="@style/class_style"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:gravity="left"
+                android:padding="2dip"
+                android:text="@string/class3"
+                />
+            <!--  接下来这边是每周第3节课的时间-->
+            <!--  一共需要七个 -->
+
+
+        </TableRow>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.1dp"
+            android:layout_weight="0.05"
+            android:background="#707070" />
+
+
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            style="@style/class_style"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:gravity="left"
+                android:padding="2dip"
+                android:text="@string/class4"
+                />
+            <!--  接下来这边是每周第4节课的时间-->
+            <!--  一共需要七个 -->
+
+
+
+        </TableRow>
+
+
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.1dp"
+            android:layout_weight="0.05"
+            android:background="#707070" />
+
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            style="@style/class_style"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:gravity="left"
+                android:padding="2dip"
+                android:text="@string/class5"
+                />
+            <!--  接下来这边是每周第5节课的时间-->
+            <!--  一共需要七个 -->
+
+
+        </TableRow>
+
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.1dp"
+            android:layout_weight="0.05"
+            android:background="#707070" />
+
+
+
+        <TableRow
+            android:id="@+id/tableRow7"
+            style="@style/class_style"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <TextView
+                android:gravity="left"
+                android:padding="2dip"
+                android:text="@string/class6"
+                />
+            <!--  接下来这边是每周第2节课的时间-->
+            <!--  一共需要七个 -->
+        </TableRow>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.1dp"
+            android:layout_weight="0.05"
+            android:background="#707070" />
+
+
+
+    </TableLayout>
+
+</RelativeLayout>

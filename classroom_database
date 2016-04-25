@@ -1,0 +1,316 @@
+-- MySQL dump 10.13  Distrib 5.5.46, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: student
+-- ------------------------------------------------------
+-- Server version	5.5.46-0ubuntu0.14.04.2
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `building_classroom`
+--
+
+DROP TABLE IF EXISTS `building_classroom`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `building_classroom` (
+  `building_id` int(11) NOT NULL,
+  `classroom_id` int(11) NOT NULL,
+  PRIMARY KEY (`building_id`,`classroom_id`),
+  KEY `classroom_id` (`classroom_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `building_classroom`
+--
+
+LOCK TABLES `building_classroom` WRITE;
+/*!40000 ALTER TABLE `building_classroom` DISABLE KEYS */;
+INSERT INTO `building_classroom` VALUES (0,1),(0,2),(0,3),(0,4),(0,5),(0,6),(0,7),(0,8),(0,9),(0,10),(0,11),(0,12),(1,13),(1,14),(1,15),(1,16),(1,17),(1,18),(1,19),(1,20),(1,21),(1,22),(1,23),(1,24),(1,25),(1,26),(1,27),(1,28),(1,29),(1,30),(1,31),(1,32),(1,33),(1,34),(1,35),(1,36),(1,37),(1,38),(1,39),(1,40),(1,41),(1,42),(2,43),(2,44),(2,45),(2,46),(2,47),(2,48),(2,49),(2,50),(2,51),(2,52),(2,53),(2,54),(2,55),(2,56),(2,57),(2,58),(2,59),(2,60),(2,61),(2,62),(2,63),(2,64),(2,65),(2,66),(3,67),(3,68),(3,69),(3,70),(3,71),(3,72),(3,73),(3,74),(3,75),(3,76),(3,77),(3,78);
+/*!40000 ALTER TABLE `building_classroom` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `buildings`
+--
+
+DROP TABLE IF EXISTS `buildings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `buildings` (
+  `building_id` int(11) NOT NULL AUTO_INCREMENT,
+  `building_name` varchar(20) DEFAULT NULL,
+  `location` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`building_id`),
+  CONSTRAINT `fk_building_id` FOREIGN KEY (`building_id`) REFERENCES `building_classroom` (`building_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `buildings`
+--
+
+LOCK TABLES `buildings` WRITE;
+/*!40000 ALTER TABLE `buildings` DISABLE KEYS */;
+INSERT INTO `buildings` VALUES (0,'教学西楼A座','教学西楼'),(1,'教学西楼B座','教学西楼'),(2,'教学西楼C座','教学西楼'),(3,'教学西楼D座','教学西楼');
+/*!40000 ALTER TABLE `buildings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `classroom_info`
+--
+
+DROP TABLE IF EXISTS `classroom_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `classroom_info` (
+  `classroom_id` int(11) NOT NULL AUTO_INCREMENT,
+  `current_people` int(11) NOT NULL DEFAULT '0',
+  `max_people` int(11) NOT NULL DEFAULT '50',
+  `order_people` int(11) NOT NULL DEFAULT '0',
+  `classroom_name` varchar(10) DEFAULT NULL,
+  `status` tinyint(255) NOT NULL DEFAULT '0' COMMENT '0->available, 1->having lessons',
+  PRIMARY KEY (`classroom_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `classroom_info`
+--
+
+LOCK TABLES `classroom_info` WRITE;
+/*!40000 ALTER TABLE `classroom_info` DISABLE KEYS */;
+INSERT INTO `classroom_info` VALUES (1,0,80,0,'A101',0),(2,20,80,0,'A103',0),(3,0,80,0,'A105',0),(4,0,80,0,'A106',0),(5,0,80,0,'A201',0),(6,0,80,0,'A202',0),(7,0,80,0,'A205',0),(8,0,80,0,'A206',0),(9,0,80,0,'A301',0),(10,0,80,0,'A302',0),(11,0,80,0,'A305',0),(12,0,80,0,'A306',0),(13,12,50,0,'B101',0),(14,52,50,0,'B102',0),(15,32,50,0,'B105',0),(16,3,50,0,'B106',0),(17,2,50,0,'B201',0),(18,12,50,0,'B202',0),(19,2,50,0,'B203',0),(20,4,50,0,'B205',0),(21,22,50,0,'B206',0),(22,5,50,0,'B207',0),(23,32,50,0,'B208',0),(24,5,50,0,'B209',0),(25,15,50,0,'B210',0),(26,5,50,0,'B211',0),(27,5,50,0,'B212',0),(28,5,50,0,'B214',0),(29,22,50,0,'B216',0),(30,12,50,0,'B301',0),(31,2,50,0,'B302',0),(32,4,50,0,'B303',0),(33,32,50,0,'B305',0),(34,5,50,0,'B306',0),(35,32,50,0,'B307',0),(36,5,50,0,'B308',0),(37,15,50,0,'B309',0),(38,5,50,0,'B310',0),(39,5,50,0,'B311',0),(40,5,50,0,'B312',0),(41,2,50,0,'B314',0),(42,12,50,0,'B316',0),(43,2,50,0,'C202',0),(44,4,50,0,'C203',0),(45,22,50,0,'C205',0),(46,5,50,0,'C206',0),(47,32,50,0,'C207',0),(48,5,50,0,'C208',0),(49,15,50,0,'C209',0),(50,5,50,0,'C210',0),(51,5,50,0,'C211',0),(52,5,50,0,'C212',0),(53,22,50,0,'C214',0),(54,12,50,0,'C216',0),(55,2,50,0,'C302',0),(56,4,50,0,'C303',0),(57,32,50,0,'C305',0),(58,5,50,0,'C306',0),(59,32,50,0,'C307',0),(60,5,50,0,'C308',0),(61,15,50,0,'C309',0),(62,5,50,0,'C310',0),(63,5,50,0,'C311',0),(64,5,50,0,'C312',0),(65,22,80,0,'C314',0),(66,2,80,0,'C316',0),(67,72,80,0,'D101',0),(68,32,80,0,'D102',0),(69,15,80,0,'D105',0),(70,62,80,0,'D106',0),(71,4,80,0,'D201',0),(72,5,80,0,'D202',0),(73,22,80,0,'D205',0),(74,13,80,0,'D206',0),(75,12,80,0,'D301',0),(76,17,80,0,'D302',0),(77,0,50,0,'D305',0),(78,0,50,0,'D306',0);
+/*!40000 ALTER TABLE `classroom_info` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 trigger change_current_people 
+before update 
+on classroom_info 
+for each ROW
+BEGIN
+	declare old_stat tinyint;
+	declare new_stat tinyint;
+	set old_stat = old.status;
+	set new_stat = new.status;
+	if new_stat = 1 THEN
+		set new.current_people = (select max_people from classroom_info where classroom_id = new.classroom_id);
+	ELSEIF old_stat = 1 THEN
+		set new.current_people = 0;
+	else
+		set @temp = 1;
+	end if;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Temporary table structure for view `classroom_people`
+--
+
+DROP TABLE IF EXISTS `classroom_people`;
+/*!50001 DROP VIEW IF EXISTS `classroom_people`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `classroom_people` (
+  `building_id` tinyint NOT NULL,
+  `classroom_name` tinyint NOT NULL,
+  `current_people` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `student_info`
+--
+
+DROP TABLE IF EXISTS `student_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `student_info` (
+  `student_id` varchar(20) NOT NULL,
+  `student_name` varchar(20) NOT NULL,
+  `student_college` varchar(45) NOT NULL,
+  `phone` varchar(11) DEFAULT NULL,
+  `email` varchar(20) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `sex` varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`student_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `student_info`
+--
+
+LOCK TABLES `student_info` WRITE;
+/*!40000 ALTER TABLE `student_info` DISABLE KEYS */;
+INSERT INTO `student_info` VALUES ('2013302637','yichin','computer',NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `student_info` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 trigger cal_rank before insert on student_info
+for each row
+begin
+declare cnt int;
+set cnt = (select count(*) from user_login where user_id = new.student_id);
+if cnt = 0 then insert into user_login(user_id) values(NEW.student_id);
+else
+set @temp = 1;
+end if;
+end */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Table structure for table `student_login`
+--
+
+DROP TABLE IF EXISTS `student_login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `student_login` (
+  `student_id` varchar(20) NOT NULL,
+  `student_password` varchar(45) NOT NULL COMMENT 'md5(123)',
+  KEY `fk_student_id` (`student_id`),
+  CONSTRAINT `fk_student_id` FOREIGN KEY (`student_id`) REFERENCES `student_info` (`student_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `student_login`
+--
+
+LOCK TABLES `student_login` WRITE;
+/*!40000 ALTER TABLE `student_login` DISABLE KEYS */;
+INSERT INTO `student_login` VALUES ('2013302637','827ccb0eea8a706c4c34a16891f84e7b');
+/*!40000 ALTER TABLE `student_login` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `student_view`
+--
+
+DROP TABLE IF EXISTS `student_view`;
+/*!50001 DROP VIEW IF EXISTS `student_view`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `student_view` (
+  `student_id` tinyint NOT NULL,
+  `student_name` tinyint NOT NULL,
+  `student_college` tinyint NOT NULL,
+  `phone` tinyint NOT NULL,
+  `email` tinyint NOT NULL,
+  `address` tinyint NOT NULL,
+  `sex` tinyint NOT NULL,
+  `user_password` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `user_login`
+--
+
+DROP TABLE IF EXISTS `user_login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_login` (
+  `user_id` varchar(20) NOT NULL,
+  `user_password` varchar(32) NOT NULL DEFAULT '670b14728ad9902aecba32e22fa4f6bd' COMMENT 'md5(12345)',
+  `role` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0->student,1->administrator,2->...',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `last_login_time` datetime DEFAULT NULL,
+  `login_ip` varchar(16) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_login`
+--
+
+LOCK TABLES `user_login` WRITE;
+/*!40000 ALTER TABLE `user_login` DISABLE KEYS */;
+INSERT INTO `user_login` VALUES ('2013302627','63a9f0ea7bb98050796b649e85481845',0,'2015-12-05 11:36:17',NULL,NULL),('2013302632','63a9f0ea7bb98050796b649e85481845',0,'2015-12-05 14:37:51',NULL,NULL),('2013302637','63a9f0ea7bb98050796b649e85481845',0,'2015-12-04 14:02:34',NULL,NULL),('root','63a9f0ea7bb98050796b649e85481845',1,'0000-00-00 00:00:00',NULL,NULL),('test','63a9f0ea7bb98050796b649e85481845',1,'2015-12-05 10:50:56',NULL,NULL);
+/*!40000 ALTER TABLE `user_login` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Final view structure for view `classroom_people`
+--
+
+/*!50001 DROP TABLE IF EXISTS `classroom_people`*/;
+/*!50001 DROP VIEW IF EXISTS `classroom_people`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`127.0.0.1` SQL SECURITY DEFINER */
+/*!50001 VIEW `classroom_people` AS select `building_classroom`.`building_id` AS `building_id`,`classroom_info`.`classroom_name` AS `classroom_name`,`classroom_info`.`current_people` AS `current_people` from (`building_classroom` join `classroom_info`) where (`building_classroom`.`classroom_id` = `classroom_info`.`classroom_id`) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `student_view`
+--
+
+/*!50001 DROP TABLE IF EXISTS `student_view`*/;
+/*!50001 DROP VIEW IF EXISTS `student_view`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `student_view` AS select `student_info`.`student_id` AS `student_id`,`student_info`.`student_name` AS `student_name`,`student_info`.`student_college` AS `student_college`,`student_info`.`phone` AS `phone`,`student_info`.`email` AS `email`,`student_info`.`address` AS `address`,`student_info`.`sex` AS `sex`,`user_login`.`user_password` AS `user_password` from (`student_info` join `user_login`) where (`user_login`.`user_id` = `student_info`.`student_id`) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2015-12-06  1:07:07
